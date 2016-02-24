@@ -42,30 +42,24 @@
 <h3>
 <a id="r-scripts-should-be-executed-one-bye-one" class="anchor" href="#r-scripts-should-be-executed-one-bye-one" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>R scripts (should be executed one bye one):</h3>
 
-<ol>
-<li>
-<strong>precalculate_M.R</strong> to precalculate and prestore M matrix for NP-method, skip if using the default M matrix.</li>
-<li>
-<strong>NP.fg.R</strong> to get foreground NPES.</li>
-<li>
-<strong>NP.bg.R</strong> to get background NPES distributions using gene set permutation analysis, to save time users can execute parallelly, but please pay attention to the file directions.</li>
-<li>
-<strong>NP.pvalue.R</strong> to normalize NPES and get p-value using the outputs of NP.fg.R and NP.bg.R.</li>
-</ol>
+<p>1 . <strong>precalculate_M.R</strong> to precalculate and prestore M matrix for NP-method, skip if using the default M matrix.</p>
+
+<p>2 . <strong>NP.fg.R</strong> to get foreground NPES.</p>
+
+<p>3 . <strong>NP.bg.R</strong> to get background NPES distributions using gene set permutation analysis, to save time users can execute parallelly, but please pay attention to the file directions.</p>
+
+<p>4 . <strong>NP.pvalue.R</strong> to normalize NPES and get p-value using the outputs of NP.fg.R and NP.bg.R.</p>
 
 <h3>
 <a id="input-files" class="anchor" href="#input-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input files:</h3>
 
-<ol>
-<li>
-<strong>A_adjmat_htri.Rdata</strong>: A adjacent matrix for the HTRI network.</li>
-<li>
-<strong>M_htri_rwr0.5.Rdata</strong>: A N*N matrix, named p.single, which is precalculated as the M matrix of NP-method using precalculate.R (with parameters HTRI network and r=0.5).</li>
-<li>
-<strong>TS6.2_hsa.miRFam.mat.txt</strong>: A matrix representing the TargetScan v6.2 annotated conserved targets of miRNA families, each column is a geneset, 0/1 represents geneset containing the gene or not;</li>
-<li>
-<strong>DE_test.GSE4107.txt</strong>: A test gene differential expression file, 2 columns, first is gene name, second is score.</li>
-</ol>
+<p>1 . <strong>A_adjmat_htri.Rdata</strong>: A adjacent matrix for the HTRI network.</p>
+
+<p>2 . <strong>M_htri_rwr0.5.Rdata</strong>: A N*N matrix, named p.single, which is precalculated as the M matrix of NP-method using precalculate.R (with parameters HTRI network and r=0.5).</p>
+
+<p>3 . <strong>TS6.2_hsa.miRFam.mat.txt</strong>: A matrix representing the TargetScan v6.2 annotated conserved targets of miRNA families, each column is a geneset, 0/1 represents geneset containing the gene or not;</p>
+
+<p>4 . <strong>DE_test.GSE4107.txt</strong>: A test gene differential expression file, 2 columns, first is gene name, second is score.</p>
 
 <h3>
 <a id="output-files" class="anchor" href="#output-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Output files:</h3>
