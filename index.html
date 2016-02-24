@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>NP-method by wt2015-github</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>NP-method</h1>
+        <h2>A network propagation based method for inferring the perturbed microRNA regulatory networks from gene expression data</h2>
+        <a href="https://github.com/wt2015-github/NP-method" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p>R codes (Version 2013.12.13)</p>
+
+<p><a href="http://wt2015-github.github.io/NP-method/">Homepage @ Github</a> | <a href="http://bioinfo.au.tsinghua.edu.cn/member/jgu/np/">Homepage @ Jin Gu's Lab</a> | <a href="https://github.com/wt2015-github/NP-method">Source Code</a></p>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>This network propagation based method (NP-method), takes advantage of the global network differential information, and carries out a integrated random walk plus forward searching algorithm to infer the perturbed miRNAs as well as their leading-edge target genes.</p>
+
+<h2>
+<a id="details-and-usage" class="anchor" href="#details-and-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Details and Usage</h2>
+
+<h3>
+<a id="r-scripts-should-be-executed-one-bye-one" class="anchor" href="#r-scripts-should-be-executed-one-bye-one" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>R scripts (should be executed one bye one):</h3>
+
+<ol>
+<li>
+<strong>precalculate_M.R</strong> to precalculate and prestore M matrix for NP-method, skip if using the default M matrix.</li>
+<li>
+<strong>NP.fg.R</strong> to get foreground NPES.</li>
+<li>
+<strong>NP.bg.R</strong> to get background NPES distributions using gene set permutation analysis, to save time users can execute parallelly, but please pay attention to the file directions.</li>
+<li>
+<strong>NP.pvalue.R</strong> to normalize NPES and get p-value using the outputs of NP.fg.R and NP.bg.R.</li>
+</ol>
+
+<h3>
+<a id="input-files" class="anchor" href="#input-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input files:</h3>
+
+<ol>
+<li>
+<strong>A_adjmat_htri.Rdata</strong>: A adjacent matrix for the HTRI network.</li>
+<li>
+<strong>M_htri_rwr0.5.Rdata</strong>: A N*N matrix, named p.single, which is precalculated as the M matrix of NP-method using precalculate.R (with parameters HTRI network and r=0.5).</li>
+<li>
+<strong>TS6.2_hsa.miRFam.mat.txt</strong>: A matrix representing the TargetScan v6.2 annotated conserved targets of miRNA families, each column is a geneset, 0/1 represents geneset containing the gene or not;</li>
+<li>
+<strong>DE_test.GSE4107.txt</strong>: A test gene differential expression file, 2 columns, first is gene name, second is score.</li>
+</ol>
+
+<h3>
+<a id="output-files" class="anchor" href="#output-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Output files:</h3>
+
+<ol>
+<li>
+<p>Output of <strong>precalculate_M.R</strong></p>
+
+<p><strong>M matrix file</strong>: containing a matrix variable named p.single.</p>
+</li>
+<li>
+<p>Outputs of <strong>NP.fg.R</strong></p>
+
+<p><strong>NPES.txt</strong>: foreground NPES and size information
+<strong>LE.txt</strong>: leading-edge (LE) targets
+<strong>genelist.net.txt</strong>: intermediate file, expressions of genes in networks
+<strong>geneset.net.txt</strong>: intermediate file, genesets containing the genes in networks
+<strong>gene_p.single.txt</strong>: intermediate file, sorted network genes according to single seed based RWR in the farward searching procedure
+<strong>score_rank.txt</strong>: intermediate file, sorted targets, fold change and NPES scores of each miRNA target set, every 3 lines are these information of one miRNA target set</p>
+</li>
+<li>
+<p>Outputs of <strong>NP.bg.R</strong></p>
+
+<p><strong>NPES.bg.txt</strong>: background NPES</p>
+</li>
+<li>
+<p>Output of <strong>NP.pvalue.R</strong></p>
+
+<p><strong>NPES_result.txt</strong>: results of the NPES score, normalized score, p-value and FDR for each miRNA</p>
+</li>
+</ol>
+
+<p><strong>Note</strong>: some NA values in some outputs are reasonable (including the warnings during runing R), because not all genes in network have expression measurements.</p>
+
+<h2>
+<a id="publication" class="anchor" href="#publication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publication</h2>
+
+<p>Ting Wang, Jin Gu, Yanda Li. "Inferring the perturbed microRNA regulatory networks from gene expression data using a network propagation based method." <em>BMC bioinformatics</em> 15.1 (2014): 255. PMID: 25069957.</p>
+
+<h2>
+<a id="main-authors" class="anchor" href="#main-authors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Main Authors</h2>
+
+<p><a href="http://wt2015-github.github.io/">Ting Wang</a> (<a href="wang9ting@gmail.com">email</a>), <a href="http://bioinfo.au.tsinghua.edu.cn/member/jgu/">Jin Gu</a> (<a href="wellgoo@gmail.com">email</a>).</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/wt2015-github/NP-method/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/wt2015-github/NP-method/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/wt2015-github/NP-method"></a> is maintained by <a href="https://github.com/wt2015-github">wt2015-github</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
