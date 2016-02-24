@@ -20,23 +20,31 @@ This network propagation based method (NP-method), takes advantage of the global
 4. **DE_test.GSE4107.txt**: A test gene differential expression file, 2 columns, first is gene name, second is score.
 
 ### Output files:
-1. Output of **precalculate_M.R**
+1 . Output of **precalculate_M.R**
 
-	**M matrix file**: containing a matrix variable named p.single.
-2. Outputs of **NP.fg.R**
+* **M matrix file**: containing a matrix variable named p.single.
 
-	**NPES.txt**: foreground NPES and size information
-	**LE.txt**: leading-edge (LE) targets
-	**genelist.net.txt**: intermediate file, expressions of genes in networks
-	**geneset.net.txt**: intermediate file, genesets containing the genes in networks
-	**gene_p.single.txt**: intermediate file, sorted network genes according to single seed based RWR in the farward searching procedure
-	**score_rank.txt**: intermediate file, sorted targets, fold change and NPES scores of each miRNA target set, every 3 lines are these information of one miRNA target set
-3. Outputs of **NP.bg.R**
+2 . Outputs of **NP.fg.R**
 
-	**NPES.bg.txt**: background NPES
-4. Output of **NP.pvalue.R**
+* **NPES.txt**: foreground NPES and size information
 
-	**NPES_result.txt**: results of the NPES score, normalized score, p-value and FDR for each miRNA
+* **LE.txt**: leading-edge (LE) targets
+
+* **genelist.net.txt**: intermediate file, expressions of genes in networks
+
+* **geneset.net.txt**: intermediate file, genesets containing the genes in networks
+
+* **gene_p.single.txt**: intermediate file, sorted network genes according to single seed based RWR in the farward searching procedure
+
+* **score_rank.txt**: intermediate file, sorted targets, fold change and NPES scores of each miRNA target set, every 3 lines are these information of one miRNA target set
+
+3 . Outputs of **NP.bg.R**
+
+* **NPES.bg.txt**: background NPES
+
+4 . Output of **NP.pvalue.R**
+
+* **NPES_result.txt**: results of the NPES score, normalized score, p-value and FDR for each miRNA
 
 **Note**: some NA values in some outputs are reasonable (including the warnings during runing R), because not all genes in network have expression measurements.
 
