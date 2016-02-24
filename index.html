@@ -1,34 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>NP-method by wt2015-github</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>NP-method by wt2015-github</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
+    <div class="wrapper">
+      <header>
         <h1>NP-method</h1>
-        <h2>A network propagation based method for inferring the perturbed microRNA regulatory networks from gene expression data</h2>
-        <a href="https://github.com/wt2015-github/NP-method" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <p>R codes (Version 2013.12.13)</p>
+        <p>A network propagation based method for inferring the perturbed microRNA regulatory networks from gene expression data</p>
+        <p class="view"><a href="https://github.com/wt2015-github/NP-method">View the Project on GitHub <small>wt2015-github/NP-method</small></a></p>
+        <ul>
+          <li><a href="https://github.com/wt2015-github/NP-method/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/wt2015-github/NP-method/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/wt2015-github/NP-method">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>R codes (Version 2013.12.13)</p>
 
 <p><a href="http://wt2015-github.github.io/NP-method/">Homepage @ Github</a> | <a href="http://bioinfo.au.tsinghua.edu.cn/member/jgu/np/">Homepage @ Jin Gu's Lab</a> | <a href="https://github.com/wt2015-github/NP-method">Source Code</a></p>
 
@@ -71,33 +70,37 @@
 <h3>
 <a id="output-files" class="anchor" href="#output-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Output files:</h3>
 
-<ol>
-<li>
-<p>Output of <strong>precalculate_M.R</strong></p>
+<p>1 . Output of <strong>precalculate_M.R</strong></p>
 
-<p><strong>M matrix file</strong>: containing a matrix variable named p.single.</p>
-</li>
+<ul>
 <li>
-<p>Outputs of <strong>NP.fg.R</strong></p>
+<strong>M matrix file</strong>: containing a matrix variable named p.single.</li>
+</ul>
 
-<p><strong>NPES.txt</strong>: foreground NPES and size information
-<strong>LE.txt</strong>: leading-edge (LE) targets
-<strong>genelist.net.txt</strong>: intermediate file, expressions of genes in networks
-<strong>geneset.net.txt</strong>: intermediate file, genesets containing the genes in networks
-<strong>gene_p.single.txt</strong>: intermediate file, sorted network genes according to single seed based RWR in the farward searching procedure
-<strong>score_rank.txt</strong>: intermediate file, sorted targets, fold change and NPES scores of each miRNA target set, every 3 lines are these information of one miRNA target set</p>
-</li>
+<p>2 . Outputs of <strong>NP.fg.R</strong></p>
+
+<ul>
+<li><p><strong>NPES.txt</strong>: foreground NPES and size information</p></li>
+<li><p><strong>LE.txt</strong>: leading-edge (LE) targets</p></li>
+<li><p><strong>genelist.net.txt</strong>: intermediate file, expressions of genes in networks</p></li>
+<li><p><strong>geneset.net.txt</strong>: intermediate file, genesets containing the genes in networks</p></li>
+<li><p><strong>gene_p.single.txt</strong>: intermediate file, sorted network genes according to single seed based RWR in the farward searching procedure</p></li>
+<li><p><strong>score_rank.txt</strong>: intermediate file, sorted targets, fold change and NPES scores of each miRNA target set, every 3 lines are these information of one miRNA target set</p></li>
+</ul>
+
+<p>3 . Outputs of <strong>NP.bg.R</strong></p>
+
+<ul>
 <li>
-<p>Outputs of <strong>NP.bg.R</strong></p>
+<strong>NPES.bg.txt</strong>: background NPES</li>
+</ul>
 
-<p><strong>NPES.bg.txt</strong>: background NPES</p>
-</li>
+<p>4 . Output of <strong>NP.pvalue.R</strong></p>
+
+<ul>
 <li>
-<p>Output of <strong>NP.pvalue.R</strong></p>
-
-<p><strong>NPES_result.txt</strong>: results of the NPES score, normalized score, p-value and FDR for each miRNA</p>
-</li>
-</ol>
+<strong>NPES_result.txt</strong>: results of the NPES score, normalized score, p-value and FDR for each miRNA</li>
+</ul>
 
 <p><strong>Note</strong>: some NA values in some outputs are reasonable (including the warnings during runing R), because not all genes in network have expression measurements.</p>
 
@@ -110,25 +113,13 @@
 <a id="main-authors" class="anchor" href="#main-authors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Main Authors</h2>
 
 <p><a href="http://wt2015-github.github.io/">Ting Wang</a> (<a href="wang9ting@gmail.com">email</a>), <a href="http://bioinfo.au.tsinghua.edu.cn/member/jgu/">Jin Gu</a> (<a href="wellgoo@gmail.com">email</a>).</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/wt2015-github/NP-method/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/wt2015-github/NP-method/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/wt2015-github/NP-method"></a> is maintained by <a href="https://github.com/wt2015-github">wt2015-github</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
-
-  
+    <footer>
+      <p>Project maintained by <a href="https://github.com/wt2015-github">wt2015-github</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
