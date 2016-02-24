@@ -1,12 +1,12 @@
 # NP-method
-A network propagation based method for inferring the perturbed microRNA regulatory networks from gene expression data
+A network propagation based method for the inference of perturbed microRNA regulatory networks
 
 R codes (Version 2013.12.13)
 
 [Homepage @ Github](http://wt2015-github.github.io/NP-method/) | [Homepage @ Jin Gu's Lab](http://bioinfo.au.tsinghua.edu.cn/member/jgu/np/) | [Source Code](https://github.com/wt2015-github/NP-method)
 
 ## Introduction
-This network propagation based method (NP-method), takes advantage of the global network differential information, and carries out a integrated random walk plus forward searching algorithm to infer the perturbed miRNAs as well as their leading-edge target genes.
+This network propagation based method (NP-method), takes advantage of the global network differential information, and carries out a integrated random walk plus forward searching algorithm to infer the perturbed miRNAs as well as their leading-edge target genes using gene expression data.
 
 ## Details and Usage
 ### R scripts (should be executed one bye one):
