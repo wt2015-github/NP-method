@@ -60,4 +60,4 @@ This network propagation based method (NP-method), takes advantage of the global
 Ting Wang, Jin Gu, Yanda Li. "Inferring the perturbed microRNA regulatory networks from gene expression data using a network propagation based method." *BMC bioinformatics* 15.1 (2014): 255. PMID: 25069957.
 
 ## Contact
-[Ting Wang](http://wt2015-github.github.io/) ([email](wang9ting@gmail.com)), [Jin Gu](http://bioinfo.au.tsinghua.edu.cn/member/jgu/) ([email](wellgoo@gmail.com)).
+[Ting Wang](http://wt2015-github.github.io/) (wang9ting@gmail.com), [Jin Gu](http://bioinfo.au.tsinghua.edu.cn/member/jgu/) (wellgoo@gmail.com).
